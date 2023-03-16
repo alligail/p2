@@ -1,6 +1,7 @@
 # Web Development (Project 2)
 
 Functionality
+
 This application is aimed at capturing peoples contact information, so whoever is running this application can later spam them for future marketing offers on their hypothetical (and at this time unknown) product.
 
 There are two pecularliar aspects of this application:
