@@ -1,0 +1,58 @@
+extends layout.pug
+
+block content
+    h1 Update Contact
+    form(action='/'+contact.id+'/edit', method='post')
+        fieldset
+            legend  Basic Info
+            section 
+                label(for='first') First Name: 
+                input(type = 'text', name='first', value= contact.firstname)
+            section 
+                label(for='last') Last Name: 
+                input(type = 'text', name='last', value=contact.lastname)
+            section
+                label(for='phone') Phone: 
+                input(type = 'tel', name='phone', value=contact.phonenumber) 
+            section 
+                label(for='email') Email:
+                input(type='email', name='email', value=contact.email)
+        fieldset
+            legend Address
+            section 
+                label(for='street') Street
+                input(type='text', name='street', value=contact.street)
+            section
+                label(for='city') City 
+                input(type='text', name='city', value=contact.city)
+            section
+                label(for='state') State:
+                input(type='text', name='state', value=contact.state)
+            section 
+                label(for='zip') Zip: 
+                input(type='text', name='zip', value=contact.zip)
+            section 
+                label(for='country') Country: 
+                input(type='text', name='country', value=contact.country)
+        fieldset
+            legend Contact Preferences
+            section 
+                if contact.contactbyphone === 1
+                    input(type='checkbox', name='contact_by_phone', checked="checked")
+                else
+                    input(type='checkbox', name='contact_by_phone')
+                label(for='contact_by_phone') Contact by phone 
+            section 
+                if contact.contactbyemail === 1
+                    input(type='checkbox', name='contact_by_email', checked="checked")
+                else
+                    input(type='checkbox', name='contact_by_email')
+                label(for='contact_by_email') Contact by email 
+            section 
+                if contact.contactbymail === 1
+                    input(type='checkbox', name='contact_by_mail', checked="checked")
+                else
+                    input(type='checkbox', name='contact_by_mail')
+                label(for='contact_by_mail') Contact by mail 
+        button(type='submit') Save 
+        a(href='/'+contact.id) Cancel 

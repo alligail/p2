@@ -1,0 +1,14 @@
+html
+    head
+        title P2 Contacts
+        link(rel='stylesheet', href = 'https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css')
+        link(rel='icon', href='data:,')
+    body 
+        if !hide_signup
+            if user
+                span
+                    span #{user.fName} #{user.lName} 
+                    a(href='/logout') Sign out
+            else
+                a(href='/login') Sign in
+        block content
